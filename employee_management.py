@@ -1,4 +1,4 @@
-print("Employee Management System")
+print("===== Employee Management System =====")
 
 employees = []
 
@@ -7,21 +7,24 @@ while True:
     print("2. View Employees")
     print("3. Exit")
 
-    choice = input("Enter choice: ")
+    choice = input("Enter your choice: ")
 
     if choice == "1":
         name = input("Enter employee name: ")
         employees.append(name)
-        print("Employee Added Successfully!")
+        print("✅ Employee added successfully!")
 
     elif choice == "2":
-        print("\nEmployees:")
-        for employee in employees:
-            print(employee)
+        if len(employees) == 0:
+            print("No employees found.")
+        else:
+            print("\nEmployee List:")
+            for employee in employees:
+                print("-", employee)
 
     elif choice == "3":
-        print("Thank You!")
+        print("Thank you!")
         break
 
     else:
-        print("Invalid Choice")
+        print("Invalid choice. Please try again.")
